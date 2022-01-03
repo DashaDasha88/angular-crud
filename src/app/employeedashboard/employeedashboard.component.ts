@@ -37,6 +37,9 @@ export class EmployeedashboardComponent implements OnInit {
     .subscribe(res=>{
       console.log(res);
       alert('Employee Added Successfully');
+    },
+    err=>{
+      alert('Something went wrong');
     })
   }
 
