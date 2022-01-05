@@ -30,8 +30,8 @@
       <td>{{row.mobile}}</td>
       <td>{{row.salary}}</td>
       <td>
-        <button class="btn btn-info">Edit</button>
-        <button class="btn btn-danger">Delete</button>
+        <button (click)="onEdit(row)" style="color: aliceblue" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" class="btn btn-info">Edit</button>
+        <button (click)="deleteEmployee(row)" class="btn btn-danger">Delete</button>
       </td>
     </tr>
   </tbody>

@@ -55,4 +55,20 @@ export class EmployeedashboardComponent implements OnInit {
     })
   }
 
+  deleteEmployee(row : any) {
+    this.api.deleteEmployee(row.id)
+    .subscribe(res=> {
+      alert("Employee Deleted")
+      this.getAllEmployees();
+    })
+  }
+
+  onEdit(row : any) {
+    this.formValue.controls['firstName'].setValue(row.firstName)
+    this.formValue.controls['lastName'].setValue(row.lastName)
+    this.formValue.controls['email'].setValue(row.email)
+    this.formValue.controls['mobile'].setValue(row.mobile)
+    this.formValue.controls['salary'].setValue(row.salary)
+  }
+
 }
