@@ -12,6 +12,7 @@ export class EmployeedashboardComponent implements OnInit {
 
   formValue !: FormGroup;
   employeeModelObj : EmployeeModel = new EmployeeModel();
+  employeeData !: any;
 
   constructor(private formbuilder: FormBuilder,
     private api : ApiService) { }
@@ -24,6 +25,7 @@ export class EmployeedashboardComponent implements OnInit {
       mobile: [''],
       salary: ['']
     })
+    this.getAllEmployees();
   }
 
   postEmployeeDetails() {
@@ -43,6 +45,13 @@ export class EmployeedashboardComponent implements OnInit {
     },
     err=>{
       alert('Something went wrong');
+    })
+  }
+
+  getAllEmployees() {
+    this.api.getEmployee()
+    .subscribe(res=> {
+      this.employeeData = res;
     })
   }
 
