@@ -4,6 +4,38 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "id": 2,
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "email": "bob.johnson@bob.com",
+      "mobile": "44444444",
+      "salary": "100000000"
+    },
+    {
+      "id": 3,
+      "firstName": "John",
+      "lastName": "Bobson",
+      "email": "john@john.com",
+      "mobile": "44444444",
+      "salary": "1000000"
+    },
+    {
+      "id": 4,
+      "firstName": "Jim",
+      "lastName": "Jimson",
+      "email": "jim@jim.com",
+      "mobile": "4444444",
+      "salary": "1000000"
+    },
+    {
+      "id": 5,
+      "firstName": "ddd",
+      "lastName": "dddd",
+      "email": "dddd",
+      "mobile": "dddd",
+      "salary": "dddd"
     }
   ],
   "comments": [

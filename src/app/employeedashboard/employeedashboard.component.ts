@@ -37,6 +37,9 @@ export class EmployeedashboardComponent implements OnInit {
     .subscribe(res=>{
       console.log(res);
       alert('Employee Added Successfully');
+      let ref = document.getElementById('cancel');
+      ref?.click() //to close the form
+      this.formValue.reset() //to reset the fields
     },
     err=>{
       alert('Something went wrong');
