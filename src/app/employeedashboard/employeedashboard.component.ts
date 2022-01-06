@@ -13,6 +13,8 @@ export class EmployeedashboardComponent implements OnInit {
   formValue !: FormGroup;
   employeeModelObj : EmployeeModel = new EmployeeModel();
   employeeData !: any;
+  showAdd!: boolean;
+  showUpdate!: boolean;
 
   constructor(private formbuilder: FormBuilder,
     private api : ApiService) { }
@@ -69,6 +71,24 @@ export class EmployeedashboardComponent implements OnInit {
     this.formValue.controls['email'].setValue(row.email)
     this.formValue.controls['mobile'].setValue(row.mobile)
     this.formValue.controls['salary'].setValue(row.salary)
+  }
+
+  updateEmployeeDetails() {
+    this.employeeModelObj.firstName = this.formValue.value.firstName;
+    this.employeeModelObj.lastName = this.formValue.value.lastName;
+    this.employeeModelObj.email = this.formValue.value.email;
+    this.employeeModelObj.mobile = this.formValue.value.mobile;
+    this.employeeModelObj.salary = this.formValue.value.salary;
+
+    this.api.updateEmployee(this.employeeModelObj, this.employeeModelObj.id)
+    .subscribe(res=>{
+      alert("Updated Successfully");
+      let ref = document.getElementById('cancel')
+      ref?.click();
+      this.formValue.reset();
+      this.getAllEmployees();
+    })
+
   }
 
 }
