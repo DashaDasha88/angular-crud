@@ -30,6 +30,12 @@ export class EmployeedashboardComponent implements OnInit {
     this.getAllEmployees();
   }
 
+  clickAddEmployee(){
+    this.formValue.reset();
+    this.showAdd = true;
+    this.showUpdate = false;
+  }
+
   postEmployeeDetails() {
     this.employeeModelObj.firstName = this.formValue.value.firstName;
     this.employeeModelObj.lastName = this.formValue.value.lastName;
@@ -66,6 +72,8 @@ export class EmployeedashboardComponent implements OnInit {
   }
 
   onEdit(row : any) {
+    this.showAdd = false;
+    this.showUpdate = true;
     this.formValue.controls['firstName'].setValue(row.firstName)
     this.formValue.controls['lastName'].setValue(row.lastName)
     this.formValue.controls['email'].setValue(row.email)
