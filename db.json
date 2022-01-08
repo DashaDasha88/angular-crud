@@ -17,7 +17,15 @@
       "salary": "1000000"
     }
   ],
-  "signupUsers": [],
+  "signupUsers": [
+    {
+      "fullname": "Joe Mama",
+      "email": "joe@joe.com",
+      "password": "joemama",
+      "mobile": 44444444,
+      "id": 1
+    }
+  ],
   "profile": {
     "name": "typicode"
   }
